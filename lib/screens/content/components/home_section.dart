@@ -61,12 +61,8 @@ class _ProfileArea extends StatelessWidget {
       children: [
         CircleAvatar(
           radius: 48,
+          backgroundImage: AssetImage("assets/images/似顔絵.png"),
           backgroundColor: iceBlue,
-          child: Icon(
-            Icons.person_outline,
-            size: 48,
-            color: primaryColor,
-          ),
         ),
         SizedBox(height: defaultPadding),
         Text(
@@ -78,7 +74,7 @@ class _ProfileArea extends StatelessWidget {
         ),
         SizedBox(height: defaultPadding / 2),
         Text(
-          "ここに自己紹介の要約やキャッチコピーが入ります。",
+          "設計から検証まで、一本の線を引く。",
           style: Theme.of(context)
               .textTheme
               .bodyLarge

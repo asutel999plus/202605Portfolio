@@ -2,6 +2,7 @@ import 'package:admin/controllers/menu_app_controller.dart';
 import 'package:admin/models/project.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../constants.dart';
 
@@ -55,6 +56,19 @@ class WorksSection extends StatelessWidget {
                     project.description,
                     style: TextStyle(color: subTextColor),
                   ),
+                  if (project.downloadUrl != null) ...[
+                    SizedBox(height: defaultPadding),
+                    ElevatedButton.icon(
+                      onPressed: () =>
+                          launchUrl(Uri.parse(project.downloadUrl!)),
+                      icon: Icon(Icons.download, size: 18),
+                      label: Text("ダウンロード（ZIP）"),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: deepBlue,
+                        foregroundColor: Colors.white,
+                      ),
+                    ),
+                  ],
                 ],
               ),
             ),
